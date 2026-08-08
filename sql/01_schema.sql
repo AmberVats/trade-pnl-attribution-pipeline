@@ -113,3 +113,30 @@ CREATE TABLE IF NOT EXISTS fct_pnl (
         FOREIGN KEY (instrument_id)
         REFERENCES dim_instrument(instrument_id)
 );
+-- ============================================================
+-- 6. PnL attribution fact table
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS fct_pnl_attribution (
+    attribution_date DATE NOT NULL,
+    book             VARCHAR(50) NOT NULL,
+    instrument_id    VARCHAR(50) NOT NULL,
+
+    trading_pnl      NUMERIC(30, 8) NOT NULL DEFAULT 0,
+    price_pnl        NUMERIC(30, 8) NOT NULL DEFAULT 0,
+    realized_pnl     NUMERIC(30, 8) NOT NULL DEFAULT 0,
+    unrealized_pnl   NUMERIC(30, 8) NOT NULL DEFAULT 0,
+    total_pnl        NUMERIC(30, 8) NOT NULL DEFAULT 0,
+
+    currency         VARCHAR(10) NOT NULL,
+
+    PRIMARY KEY (
+        attribution_date,
+        book,
+        instrument_id
+    ),
+
+    CONSTRAINT fk_attribution_instrument
+        FOREIGN KEY (instrument_id)
+        REFERENCES dim_instrument(instrument_id)
+);
