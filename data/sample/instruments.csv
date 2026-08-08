@@ -1,0 +1,4 @@
+instrument_id,symbol,instrument_type,currency,exchange,sector,active
+AAPL,AAPL,EQUITY,USD,NASDAQ,Technology,true
+MSFT,MSFT,EQUITY,USD,NASDAQ,Technology,true
+GOOGL,GOOGL,EQUITY,USD,NASDAQ,Technology,true
