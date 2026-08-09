@@ -9,6 +9,7 @@ from src.ingestion import (
 from src.position import calculate_positions
 from src.pnl import calculate_pnl
 from src.attribution import calculate_attribution
+from src.report import generate_report
 
 
 def reset_input_tables():
@@ -29,6 +30,7 @@ def reset_input_tables():
 
 
 def run_pipeline():
+    """Run the complete Trade PnL Attribution pipeline."""
 
     print("========================================")
     print("Trade PnL Attribution Pipeline")
@@ -39,14 +41,16 @@ def run_pipeline():
     # -------------------------------------------------
 
     print("\nResetting previous input data...")
+
     reset_input_tables()
+
     print("Input tables cleared")
 
     # -------------------------------------------------
     # 1. Load instruments
     # -------------------------------------------------
 
-    print("\n[1/5] Loading instruments...")
+    print("\n[1/6] Loading instruments...")
 
     instruments = load_instruments(
         "data/sample/instruments.csv"
@@ -58,7 +62,7 @@ def run_pipeline():
     # 2. Load trades
     # -------------------------------------------------
 
-    print("\n[2/5] Loading trades...")
+    print("\n[2/6] Loading trades...")
 
     trades = load_trades(
         "data/sample/trades.csv"
@@ -70,7 +74,7 @@ def run_pipeline():
     # 3. Load market prices
     # -------------------------------------------------
 
-    print("\n[3/5] Loading market prices...")
+    print("\n[3/6] Loading market prices...")
 
     market_prices = load_market_prices(
         "data/sample/market_prices.csv"
@@ -82,7 +86,7 @@ def run_pipeline():
     # 4. Calculate positions
     # -------------------------------------------------
 
-    print("\n[4/5] Calculating positions...")
+    print("\n[4/6] Calculating positions...")
 
     positions = calculate_positions()
 
@@ -92,7 +96,7 @@ def run_pipeline():
     # 5. Calculate PnL and attribution
     # -------------------------------------------------
 
-    print("\n[5/5] Calculating PnL and attribution...")
+    print("\n[5/6] Calculating PnL and attribution...")
 
     pnl = calculate_pnl()
 
@@ -103,6 +107,20 @@ def run_pipeline():
     print(
         f"Calculated {len(attribution)} attribution records"
     )
+
+    # -------------------------------------------------
+    # 6. Generate HTML report
+    # -------------------------------------------------
+
+    print("\n[6/6] Generating HTML report...")
+
+    report_file = generate_report()
+
+    print(f"Report generated: {report_file}")
+
+    # -------------------------------------------------
+    # Pipeline completed
+    # -------------------------------------------------
 
     print("\n========================================")
     print("Pipeline completed successfully")
@@ -115,6 +133,7 @@ def run_pipeline():
         "positions": positions,
         "pnl": pnl,
         "attribution": attribution,
+        "report": report_file,
     }
 
 

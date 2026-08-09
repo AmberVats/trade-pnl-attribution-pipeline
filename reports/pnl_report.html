@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Trade PnL Attribution Report</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+}
+
+.header {
+    background: #111827;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0 0 8px 0;
+    font-size: 30px;
+}
+
+.header p {
+    margin: 4px 0;
+    color: #d1d5db;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.06);
+}
+
+.card-title {
+    font-size: 13px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    margin-top: 8px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+th {
+    background: #f3f4f6;
+    text-align: left;
+    font-size: 13px;
+    padding: 12px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 12px;
+    border-top: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+tr:hover {
+    background: #f9fafb;
+}
+
+.positive {
+    color: #15803d;
+}
+
+.footer {
+    text-align: center;
+    color: #6b7280;
+    padding: 20px;
+    font-size: 13px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #dcfce7;
+    color: #166534;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>
+            Trade PnL Attribution Report
+        </h1>
+
+        <p>
+            End-of-day Trade, Position and PnL Analysis
+        </p>
+
+        <p>
+            Generated: 2026-08-09 10:34:54
+        </p>
+
+        <p>
+            Currency: USD
+        </p>
+
+        <p>
+            <span class="status">
+                Pipeline Completed
+            </span>
+        </p>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-title">
+                Total PnL
+            </div>
+
+            <div class="card-value positive">
+                $500.00
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                Realized PnL
+            </div>
+
+            <div class="card-value">
+                $125.00
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                Unrealized PnL
+            </div>
+
+            <div class="card-value">
+                $375.00
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                Trading PnL
+            </div>
+
+            <div class="card-value">
+                $125.00
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                Price PnL
+            </div>
+
+            <div class="card-value">
+                $375.00
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                Instruments
+            </div>
+
+            <div class="card-value">
+                3
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DAILY BOOK PNL -->
+
+    <div class="section">
+
+        <h2>Daily Book PnL</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Date</th>
+                        <th>Book</th>
+                        <th>Trading PnL</th>
+                        <th>Price PnL</th>
+                        <th>Realized PnL</th>
+                        <th>Unrealized PnL</th>
+                        <th>Total PnL</th>
+                        <th>Currency</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr><td>2026-08-03</td><td>EQUITY_BOOK</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>USD</td></tr><tr><td>2026-08-04</td><td>EQUITY_BOOK</td><td>$125.00</td><td>$375.00</td><td>$125.00</td><td>$375.00</td><td>$500.00</td><td>USD</td></tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- INSTRUMENT PNL -->
+
+    <div class="section">
+
+        <h2>Instrument PnL</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Instrument</th>
+                        <th>Book</th>
+                        <th>Trading PnL</th>
+                        <th>Price PnL</th>
+                        <th>Realized PnL</th>
+                        <th>Unrealized PnL</th>
+                        <th>Total PnL</th>
+                        <th>Currency</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr><td>AAPL</td><td>EQUITY_BOOK</td><td>$125.00</td><td>$375.00</td><td>$125.00</td><td>$375.00</td><td>$500.00</td><td>USD</td></tr><tr><td>GOOGL</td><td>EQUITY_BOOK</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>USD</td></tr><tr><td>MSFT</td><td>EQUITY_BOOK</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>USD</td></tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- PNL ATTRIBUTION -->
+
+    <div class="section">
+
+        <h2>PnL Attribution</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Date</th>
+                        <th>Book</th>
+                        <th>Instrument</th>
+                        <th>Trading PnL</th>
+                        <th>Price PnL</th>
+                        <th>Realized PnL</th>
+                        <th>Unrealized PnL</th>
+                        <th>Total PnL</th>
+                        <th>Currency</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr><td>2026-08-03</td><td>EQUITY_BOOK</td><td>AAPL</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>USD</td></tr><tr><td>2026-08-03</td><td>EQUITY_BOOK</td><td>MSFT</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>USD</td></tr><tr><td>2026-08-04</td><td>EQUITY_BOOK</td><td>AAPL</td><td>$125.00</td><td>$375.00</td><td>$125.00</td><td>$375.00</td><td>$500.00</td><td>USD</td></tr><tr><td>2026-08-04</td><td>EQUITY_BOOK</td><td>GOOGL</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>$0.00</td><td>USD</td></tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- POSITIONS -->
+
+    <div class="section">
+
+        <h2>Position Snapshot</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Date</th>
+                        <th>Book</th>
+                        <th>Instrument</th>
+                        <th>Quantity</th>
+                        <th>Average Price</th>
+                        <th>Market Price</th>
+                        <th>Market Value</th>
+                        <th>Currency</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr><td>2026-08-03</td><td>EQUITY_BOOK</td><td>AAPL</td><td>100.00</td><td>$200.00</td><td>$200.00</td><td>$20,000.00</td><td>USD</td></tr><tr><td>2026-08-03</td><td>EQUITY_BOOK</td><td>MSFT</td><td>50.00</td><td>$500.00</td><td>$500.00</td><td>$25,000.00</td><td>USD</td></tr><tr><td>2026-08-04</td><td>EQUITY_BOOK</td><td>AAPL</td><td>75.00</td><td>$200.00</td><td>$205.00</td><td>$15,375.00</td><td>USD</td></tr><tr><td>2026-08-04</td><td>EQUITY_BOOK</td><td>GOOGL</td><td>75.00</td><td>$300.00</td><td>$300.00</td><td>$22,500.00</td><td>USD</td></tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINANCIAL LOGIC -->
+
+    <div class="section">
+
+        <h2>PnL Calculation Methodology</h2>
+
+        <p>
+            <strong>Realized PnL</strong>
+            = Sold Quantity × (Sell Price − Average Cost)
+        </p>
+
+        <p>
+            <strong>Unrealized PnL</strong>
+            = Closing Quantity × (Market Price − Average Cost)
+        </p>
+
+        <p>
+            <strong>Total PnL</strong>
+            = Realized PnL + Unrealized PnL
+        </p>
+
+        <p>
+            <strong>PnL Attribution</strong>
+            separates trading-related PnL from price-related PnL.
+        </p>
+
+    </div>
+
+
+    <div class="footer">
+
+        Trade PnL Attribution Pipeline
+        <br>
+        Generated from PostgreSQL reporting views
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
