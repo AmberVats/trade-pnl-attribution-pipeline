@@ -14,6 +14,9 @@ The project is designed as a small data-engineering / financial-data pipeline de
 * PnL attribution
 * SQL reporting views
 * Automated testing with pytest
+* Executive HTML reporting
+
+> 📘 **For a detailed phase-by-phase build history, system architecture diagrams, and financial mathematics trace, see [PROJECT_ARCHITECTURE_AND_BUILD_PHASES.md](PROJECT_ARCHITECTURE_AND_BUILD_PHASES.md).**
 
 ---
 
